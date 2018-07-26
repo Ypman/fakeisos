@@ -12,7 +12,10 @@ class DBParser:
 
         data = {}
         for row in self.sqlite_cursor:
-            data[row[0]] = row[1:]
+            if row[0] in data:
+                zip(row[1:], data[row[0]])
+            else:
+                data[row[0]] = row[1:]
 
         return data
 

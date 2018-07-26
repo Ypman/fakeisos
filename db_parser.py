@@ -15,7 +15,10 @@ def get_from_db(db_name, values, table):
 
     data = {}
     for row in cursor:
-        data[row[0]] = row[1:]
+        if row[0] in data:
+            zip(row[1:], data[row[0]])
+        else:
+            data[row[0]] = row[1:]
 
     return data
 

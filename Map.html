@@ -8,6 +8,7 @@
 
 <body>
 <div id="mapdiv" style="width: 600px; height: 400px;"></div>
+<div id="legenddiv"></div>
 
 
 <script> // da das ganze ein script ist könnte man das doch auch auslager oder? ist doch auch im json format wenn ich das richtig sehe... 
@@ -41,6 +42,46 @@ AmCharts.makeChart( "mapdiv", {
   "areasSettings": {
     "autoZoom": true,
     "selectedColor": "#CC0000"
+  },
+
+  legend: {
+      width: "100%",
+      divId: "legenddiv",
+      marginRight: 27,
+      marginLeft: 27,
+      equalWidths: false,
+      backgroundAlpha: 0.5,
+      backgroundColor: "#FFFFFF",
+      borderColor: "#ffffff",
+      borderAlpha: 1,
+      top: 450,
+      left: 0,
+      horizontalGap: 10,
+      data: [{
+        title: "v1",
+        color: "#990000"
+      }, {
+        title: "v2",
+        color: "#009900"
+      }, {
+        title: "v3",
+        color: "#000099"
+      }, {
+        title: "v1+v2",
+        color: "#999900"
+      }, {
+        title: "v2+v3",
+        color: "#990099"
+      }, {
+        title: "v1+v3",
+        color: "#009999"
+      }, {
+        title: "v1+v2+v3",
+        color: "#999999"
+      }, {
+        title: "null",
+        color: "#555555"
+      }]
   },
 
   /**
